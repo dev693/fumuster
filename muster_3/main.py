@@ -42,7 +42,7 @@ for i in range(max):
 
     k = 1.0 / math.sqrt(2 * math.pi * v)
     w = list(map(lambda x: k * math.exp(-1/2 * ((x - m) ** 2)/v), values))
-    prior = n / len(training)
+    prior = float(n) / len(training)
 
     p.append(w)
     if run == 'a':
