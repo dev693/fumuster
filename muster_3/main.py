@@ -1,6 +1,8 @@
 import io
 import numpy as np
 import math
+import random
+from scipy.spatial import distance
 import matplotlib.pyplot as plt
 
 def load_csv(path, char = ',', cast=lambda x: float(x), max_width = 0):
@@ -18,6 +20,42 @@ def load_csv(path, char = ',', cast=lambda x: float(x), max_width = 0):
     return data
 
 
+def makeRandomUnitVector():
+    random.seed(None)
+    #rd = random.randint(1, 4)
+    x = random.random()
+    y = math.sqrt(1 - x ** 2)
+    #if(rd == 1):
+    return [x, y]
+    #if(rd == 2):
+    #    return [-x, y]
+    #if(rd == 3):
+    #    return [-x, -y]
+    #else:
+    #    return [x, -y]
+
+
+def make1000RandomUnitVectors():
+    list = []
+    for i in range(1000):
+        list.append(makeRandomUnitVector())
+    return list
+
+def project(x, u):#x auf u projezieren
+    return (np.dot(x, u)) * u
+
+def computeMu(sample):
+    sumX = np.sum(sample[:, 0])
+    sumY = np.sum(sample[:, 1])
+    return [sumX / len(sample), sumY / len(sample)]
+
+def T(v):
+    return v.T
+
+def project_var(cov, u):
+    m = [u[0] * cov[0,0]  + u[1] * cov[1,0], u[0] * cov[0,1]  + u[1] * cov[1,1]]
+    return np.dot(m , u)
+
 training = load_csv('data/chickwts_training.csv', ',', lambda x: int(x))
 testing = load_csv('data/chickwts_testing.csv', ',', lambda x: int(x))
 values = range(0, 550, 1)
@@ -32,7 +70,7 @@ print("\\hline")
 print("Futterklasse & Erwartungswert ($\\mu$) & Varianz ($\\sigma^2$) & A-Priori\\")
 print("\\hline")
 
-run = 'all'
+run = '2'
 
 for i in range(max):
     weight = np.array(list(map(lambda x: x[1], filter(lambda x: x[2] == i, training))))
@@ -60,7 +98,7 @@ if run == '1a' or run == 'all':
     plt.ylabel('Wahrscheinlichkeit p(x)')
     plt.xlabel('Gewicht (x)')
     plt.legend(loc='upper right', shadow=False, fontsize='x-small')
-    plt.show()
+    #plt.show()
 
 if run == '1b' or run == 'all':
 
@@ -112,13 +150,12 @@ if run == "2" or run == "2a" or run == "all":
 
     x3,y3 = np.random.multivariate_normal(mu3, cov3, 100).T
 
-    plt.plot(x1, y1, 'b.', label='m = ( 5, 1)')
+    plt.plot(x1, y1, 'b.', label='m = ( 5,10)')
     plt.plot(x2, y2, 'g.', label='m = ( 5, 5)')
     plt.plot(x3, y3, 'r.', label='m = (10, 6)')
     plt.xlabel('x')
     plt.ylabel('y')
-    plt.legend(loc='upper right', shadow=False, fontsize='x-small')
-    plt.show()
+    #plt.show()
 
     r_cov1 = np.cov(x1, y1)
     r_cov2 = np.cov(x2, y2)
@@ -136,13 +173,54 @@ if run == "2" or run == "2a" or run == "all":
     print ("\\K_{3} = \\begin{pmatrix} %0.2f & %0.2f \\\\ %0.2f & %0.2f \\end{pmatrix}" % (r3[0,0], r3[0,1], r3[1,0], r3[1,1]))
 
 
-if run == "2" or run == "2c" or run == "all":
-    x = np.random.uniform(0,100,100)
-    y = np.random.uniform(0,100,100)
+    #x = np.random.uniform(0,100,1000)
+    #y = np.random.uniform(0,100,1000)
 
-    l = np.sqrt(x ** 2 + y ** 2)
-    x = x / l
-    y = y / l
+    #l = np.sqrt(x ** 2 + y ** 2)
+    #x = x / l
+    #y = y / l
+
+    u = make1000RandomUnitVectors()
+    mu1_r = computeMu(np.array(list(zip(x1,y1))))
+    mu2_r = computeMu(np.array(list(zip(x2,y3))))
+    mu3_r = computeMu(np.array(list(zip(x3,y3))))
+
+    v_project = np.vectorize(project)
+
+    mu_p1 = v_project(mu1_r,u)
+    mu_p2 = v_project(mu2_r,u)
+    mu_p3 = v_project(mu3_r,u)
+
+    var1 = []
+    var2 = []
+    var3 = []
+    for u_i in u:
+        var1.append(project_var(r_cov1, u_i))
+        var2.append(project_var(r_cov2, u_i))
+        var3.append(project_var(r_cov3, u_i))
+
+    s_u12 = []
+    s_u13 = []
+    s_u23 = []
+    for i in range(1000):
+        s_u12.append(distance.euclidean(mu_p1[i],mu_p2[i]) / (var1[i] + var2[i]))
+        s_u13.append(distance.euclidean(mu_p1[i],mu_p3[i]) / (var1[i] + var3[i]))
+        s_u23.append(distance.euclidean(mu_p2[i],mu_p3[i]) / (var2[i] + var3[i]))
+
+    i12 = np.argmax(s_u12)
+    i13 = np.argmax(s_u13)
+    i23 = np.argmax(s_u23)
+
+
+
+    plt.plot([0, u[i12][0] * 12], [0, u[i12][1] * 12], 'g-', label="s_u12")
+    plt.plot([0, u[i13][0] * 12], [0, u[i13][1] * 12], 'b-', label="s_u13")
+    plt.plot([0, u[i23][0] * 12], [0, u[i23][1] * 12], 'r-', label="s_u23")
+    plt.legend(loc='upper right', shadow=False, fontsize='x-small')
+    plt.show()
+    #plt.plot(x2, y2, 'g.', label='m = ( 5, 5)')
+    #plt.plot(x3, y3, 'r.', label='m = (10, 6)')
+    print ("HUHU")
 
 
 
