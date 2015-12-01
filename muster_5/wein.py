@@ -55,7 +55,7 @@ for n in range(1,11):
         for i in range(len):
             q = np.dot(beta, weinData[:,i])
             qual = quality[i]
-            sum += math.fabs(q - qual)
+            sum += (q - qual) ** 2
 
         result.append([n, sum / len])
 

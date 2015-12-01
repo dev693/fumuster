@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3e7b9f-d7bf-4a57-a0f9-8b32c809fd73" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/muster_5/data/fish.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/muster_5/2/fish.txt" afterPath="$PROJECT_DIR$/muster_5/fish.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/muster_5/2/main.py" afterPath="$PROJECT_DIR$/muster_5/main.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/muster_5/2/wein.py" afterPath="$PROJECT_DIR$/muster_5/wein.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/muster_5/2/winequality-red.txt" afterPath="$PROJECT_DIR$/muster_5/winequality-red.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muster_5/main.py" afterPath="$PROJECT_DIR$/muster_5/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muster_5/wein.py" afterPath="$PROJECT_DIR$/muster_5/wein.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="muster.iws" />
@@ -28,22 +25,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/muster_4/main.py">
+      <file leaf-file-name="wein.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/muster_5/wein.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="11" selection-start-line="1" selection-start-column="18" selection-end-line="2" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fish.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/muster_5/fish.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="1.7383177">
+              <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -52,19 +41,7 @@
         <entry file="file://$PROJECT_DIR$/muster_5/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wein.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/muster_5/wein.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -94,9 +71,10 @@
       <list>
         <option value="$PROJECT_DIR$/muster_3/main.py" />
         <option value="$PROJECT_DIR$/muster_4/main.py" />
-        <option value="$PROJECT_DIR$/muster_5/main.py" />
         <option value="$PROJECT_DIR$/muster_5/2/main.py" />
         <option value="$PROJECT_DIR$/muster_5/2/wein.py" />
+        <option value="$PROJECT_DIR$/muster_5/wein.py" />
+        <option value="$PROJECT_DIR$/muster_5/main.py" />
       </list>
     </option>
   </component>
@@ -244,6 +222,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -251,8 +230,8 @@
       <recent name="$PROJECT_DIR$/muster_5/2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.wein">
-    <configuration default="false" name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.muster 5">
+    <configuration default="false" name="muster 4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -269,7 +248,24 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="muster 5.2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/muster_5" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="muster" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/muster_5/wein.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="muster 5" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -282,40 +278,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="muster" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/muster_5/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="main (3)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/muster_5/2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="muster" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/muster_5/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="wein" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/muster_5/2" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="muster" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/muster_5/wein.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -442,7 +404,7 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python">
+    <configuration default="false" name="muster 3" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -459,19 +421,17 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.main" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.main (2)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main (3)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.wein" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.muster 3" />
+      <item index="1" class="java.lang.String" itemvalue="Python.muster 4" />
+      <item index="2" class="java.lang.String" itemvalue="Python.muster 5.2" />
+      <item index="3" class="java.lang.String" itemvalue="Python.muster 5" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.wein" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main (3)" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main (2)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main (1)" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.muster 5" />
+        <item index="1" class="java.lang.String" itemvalue="Python.muster 5.2" />
+        <item index="2" class="java.lang.String" itemvalue="Python.muster 4" />
       </list>
     </recent_temporary>
   </component>
@@ -516,7 +476,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448967375683</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="gesäubert">
+      <created>1448967449151</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1448967449151</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -530,14 +496,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.328125" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3939759" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32168674" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -570,7 +536,8 @@
     <MESSAGE value="Aufgabe 2 einiges gemacht" />
     <MESSAGE value="Abgabe" />
     <MESSAGE value="Fertsch" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fertsch" />
+    <MESSAGE value="gesäubert" />
+    <option name="LAST_COMMIT_MESSAGE" value="gesäubert" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -711,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/muster_3/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13092269">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/sklearn/cluster/k_means_.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.17299578">
@@ -729,16 +689,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26119402">
           <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/muster_5/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -758,29 +708,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/muster_5/wein.py">
+    <entry file="file://$PROJECT_DIR$/muster_5/fish.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/muster_4/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.056074765">
+          <caret line="2" column="11" selection-start-line="1" selection-start-column="18" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/muster_3/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7009346">
+          <caret line="99" column="67" selection-start-line="99" selection-start-column="67" selection-end-line="99" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/muster_5/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/muster_4/main.py">
+    <entry file="file://$PROJECT_DIR$/muster_5/wein.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="11" selection-start-line="1" selection-start-column="18" selection-end-line="2" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/muster_5/fish.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="1.7383177">
+          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
