@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da3e7b9f-d7bf-4a57-a0f9-8b32c809fd73" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muster_5/main.py" afterPath="$PROJECT_DIR$/muster_5/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/muster_5/wein.py" afterPath="$PROJECT_DIR$/muster_5/wein.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="muster.iws" />
@@ -482,7 +480,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448967449151</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="für abgabe fertig gemacht">
+      <created>1449008463016</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1449008463016</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -537,7 +541,8 @@
     <MESSAGE value="Abgabe" />
     <MESSAGE value="Fertsch" />
     <MESSAGE value="gesäubert" />
-    <option name="LAST_COMMIT_MESSAGE" value="gesäubert" />
+    <MESSAGE value="für abgabe fertig gemacht" />
+    <option name="LAST_COMMIT_MESSAGE" value="für abgabe fertig gemacht" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
