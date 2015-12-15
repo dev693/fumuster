@@ -41,6 +41,12 @@ c1 = np.array([x1,y1]).T
 m0 = np.mean(c0, 0)
 m1 = np.mean(c1, 0)
 
+cov0 = np.cov(c0)
+cov1 = np.cov(c1)
+
+print("COV_0 = \\begin{pmatrix} %s & %s \\\\ %s & %s \\end{pmatrix}" % (cov0[0,0], cov0[0,1], cov0[1,0], cov0[1,1]))
+print("COV_1 = \\begin{pmatrix} %s & %s \\\\ %s & %s \\end{pmatrix}" % (cov1[0,0], cov1[0,1], cov1[1,0], cov1[1,1]))
+
 SB = (m1 - m0) * (m1 - m0).T
 SW = [np.sum([(p0 - m0)**2 for p0 in c0], 0),np.sum([(p1 - m1)**2 for p1 in c1], 0)]
 
@@ -54,31 +60,48 @@ m1n = m1 / np.linalg.norm(m1)
 
 s = 200
 l = np.array([wn*(-s), wn*s])
+n = len(c0)
 
 
-w0 = np.array(float(np.dot(m0, wn.T)) * wn)
-w1 = np.array(float(np.dot(m1, wn.T)) * wn)
+mu0 = float(np.dot(m0, wn.T))
+mu1 = float(np.dot(m1, wn.T))
+muv0 = (mu0 * wn)
+muv1 = (mu1 * wn)
 
-l0 = w0 - m0
-l1 = w1 - m1
+print("\\mu_0 = %s" % mu0)
+print("\\mu_1 = %s" % mu1)
 
-a0 = float(np.dot(l0, wn.T))
-a1 = float(np.dot(l1, wn.T))
+#print("\\vec{\\mu_0} = %s" % (mu0 * wn))
+#print("\\vec{\\mu_1} = %s" % (mu1 * wn))
+print("\\vec{m_{0,p}} = \\begin{pmatrix} %s \\ %s \\end{pmatrix}" % (muv0[0], muv0[1]))
+print("\\vec{m_{1,p}} = \\begin{pmatrix} %s \\ %s \\end{pmatrix}" % (muv1[0], muv1[1]))
 
+var0 = np.sum([(float(np.dot(p, wn.T)) - mu0)**2 for p in c0]) / n
+var1 = np.sum([(float(np.dot(p, wn.T)) - mu1)**2 for p in c1]) / n
 
-plt.scatter(x0, y0, color='b', marker='.', label='0 Cluster')
-plt.scatter(x1, y1, color='r', marker='.', label='1 Cluster')
+print("\\sigma_{0,p} = %s" % var0)
+print("\\sigma_{1,p} = %s" % var1)
+
+print("\\vec{w} = \\begin{pmatrix} %s \\ %s \\end{pmatrix}" % (wn[0], wn[1]))
+
+w0 = ((mu0 + mu1) / 2) * wn
+
+print("\\vec{w_0} = \\begin{pmatrix} %s \\ %s \\end{pmatrix}" % (w0[0], w0[1]))
+
+plt.scatter(x0, y0, color='b', marker='.', label='Punkte des 0 Cluster')
+plt.scatter(x1, y1, color='r', marker='.', label='Punkte des 1 Cluster')
 plt.plot(l[:,0],l[:,1], color='g', label="Diskriminante")
-plt.scatter(w0[0], w0[1], color='b', marker='x', s=60, linewidths=3, label="mu0 des 0 Cluster")
-plt.scatter(w1[0], w1[1], color='r', marker='x', s=60, linewidths=3, label="mu1 des 1 Cluster")
+plt.scatter(muv0[0], muv0[1], color='b', marker='x', s=30, linewidths=1.5, label="erwartungswert des 0 Cluster")
+plt.scatter(muv1[0], muv1[1], color='r', marker='x', s=30, linewidths=1.5, label="Erwartungswert des 1 Cluster")
+plt.scatter(w0[0], w0[1], color='#00FFFF', marker='x', s=30, linewidths=1.5, label="Schnittpunk der Normalverteilungen")
 
 
 plt.xlim([-100,250])
 plt.ylim([-100,200])
 plt.legend(loc='upper left', shadow=False, fontsize='x-small')
 
-plt.scatter(m0[0], m0[1], color='b', marker='x', s=60, linewidths=3)
-plt.scatter(m1[0], m1[1], color='r', marker='x', s=60, linewidths=3)
+plt.scatter(m0[0], m0[1], color='b', marker='x', s=30, linewidths=1.5)
+plt.scatter(m1[0], m1[1], color='r', marker='x', s=30, linewidths=1.5)
 #plt.plot([w0[0],m0[0]],[w0[1],m0[1]], color='black')
 #plt.plot([w1[0],m1[0]],[w1[1],m1[1]], color='black')
 
