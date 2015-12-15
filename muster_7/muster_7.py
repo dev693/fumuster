@@ -18,22 +18,25 @@ def load_csv(path, char = ',', cast = lambda x: float(x)):
 
     return np.array(data)
 
-def plot_w(w, count = -1, color = None):
-    x = w[0]
-    y = w[1]
-    len = np.linalg.norm(w)
-    wn = w / len
-    xn = wn[0]
-    yn = wn[1]
-    n = len * np.array([-yn,xn])
-    ww = np.array(list([[0, 0], w]))
-    nn = np.array(list([[0, 0], n]))
-    if color == None:
-        color = '#00%02x00' % ((50 + count * 30) % 256)
+def norm_vec(vec):
+    len = np.linalg.norm(vec)
+    vec_n = vec / len
+    xn = vec_n[0]
+    yn = vec_n[1]
+    return len * np.array([-yn,xn])
 
-    print("w%s: (%s,%s)" % (count, x, y))
-    plt.plot(ww[:,0], ww[:,1], c='green')
-    plt.plot(nn[:,0], nn[:,1], c='yellow')
+def plot_w(w, count = -1, color = None, label = None):
+    n = norm_vec(w)
+    ww = np.array(list([[0, 0], w]))
+    nn = np.array(list([[0,0], n]))
+    color = '#00%02x00' % ((50 + count * 30) % 256)
+    print("w%s: ( %s, %s)" % (count, w[0], w[1]))
+
+    if label == None:
+        label = ("w, k = %s" % count)
+
+    plt.plot(ww[:,0], ww[:,1], c=color, label=label)
+    plt.plot(nn[:,0], nn[:,1], c=color, linestyle='dashed')
 
 def perzeptron(data, omega = 1, plot_step = False):
     o = data[:,2]
@@ -70,7 +73,7 @@ data = load_csv("data/klausur.txt", char=";")
 data = np.array([data[:,0], np.ones(len(data)),data[:,1]]).T
 omega = 1
 
-#w = perzeptron(data, omega, True)
+w = perzeptron(data, omega, True)
 
 #print("changes  : %s" % changes)
 #print("nochanges: since %s" % nochange)
@@ -79,15 +82,17 @@ pos = np.array(list(filter(lambda x: x[2] >= omega, data)))
 neg = np.array(list(filter(lambda x: x[2]  < omega, data)))
 
 
-#plt.scatter(pos[:,0], pos[:,1], c='green', marker='+')
-#plt.scatter(neg[:,0], neg[:,1], c='red', marker='+')
-#plt.show()
+plt.scatter(pos[:,0], pos[:,1], c='green', marker='+', label="Positive Marker")
+plt.scatter(neg[:,0], neg[:,1], c='red', marker='+', label="Negative Marker")
+plt.legend(loc='upper right', shadow=False, fontsize='x-small')
+plt.show()
 
 ws = np.array([perzeptron(data) for i in range(100)])
 wmean = ws.mean(axis=0)
-plot_w(wmean)
+plot_w(wmean, label = "w_mean bei 100 durchlaeufen")
 print("w_mean: %s" % wmean)
 
-plt.scatter(pos[:,0], pos[:,1], c='green', marker='+')
-plt.scatter(neg[:,0], neg[:,1], c='red', marker='+')
+plt.scatter(pos[:,0], pos[:,1], c='green', marker='+', label="Positive Marker")
+plt.scatter(neg[:,0], neg[:,1], c='red', marker='+', label="Negative Marker")
+plt.legend(loc='upper right', shadow=False, fontsize='x-small')
 plt.show()
