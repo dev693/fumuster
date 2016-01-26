@@ -44,8 +44,9 @@ def perzeptron(data, omega = 1, plot_step = False):
     w = np.array([0,0])
     changes = 0
     nochanges = 0
+    max = data.shape[0]
 
-    for k in range(100):
+    for k in range(1000):
         #for i in range(x.shape[0]):
         i =  random.randint(0,x.shape[0]-1)
         xi = x[i]
@@ -60,7 +61,7 @@ def perzeptron(data, omega = 1, plot_step = False):
         else:
             nochanges += 1
 
-        if nochanges >= 10:
+        if nochanges >= max:
             return w;
         #if count == 0:
             #break
